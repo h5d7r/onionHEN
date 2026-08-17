@@ -190,7 +190,10 @@
     "rp.save_usb": "將遠端遊玩詳情儲存到 USB",
     "rp.save_usb.sub": "把目前的 PIN 與帳號資訊寫入已插入的 USB 隨身碟，方便在電腦上查看",
     "plapps.title": "OnionHEN Payload 自製軟體 - 應用程式",
-    "plapps.version_fmt": "%s | 版本: %s"
+    "plapps.version_fmt": "%s | 版本: %s",
+    "ftp.toggle": "FTP server",
+    "ftp.toggle.sub": "Transfer files over the local network",
+    "ftp.off": "Off"
   },
   "notifications": {
     "notify.boot.starting": "OnionHEN 正在啟動...",
@@ -311,6 +314,9 @@
     "notify.rp.reg_set": "SCE_REGMGR：無法設定 REMOTEPLAY_rp_enable（0x%x）",
     "notify.rp.reg_verify": "SCE_REGMGR：無法驗證 REMOTEPLAY_rp_enable（0x%x）",
     "notify.rp.confirm": "sceRemoteplayConfirmDeviceRegist 0x%X 配對狀態：%d 配對錯誤：%d",
-    "notify.brand": "OnionHEN"
+    "notify.brand": "OnionHEN",
+    "notify.ftp.started": "FTP server started on %s:2121",
+    "notify.ftp.stopped": "FTP server stopped",
+    "notify.ftp.start_failed": "Failed to start FTP server"
   }
 }

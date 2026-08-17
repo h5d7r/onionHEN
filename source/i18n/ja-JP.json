@@ -190,7 +190,10 @@
     "rp.save_usb": "リモートプレイ情報を USB に保存",
     "rp.save_usb.sub": "現在の PIN とアカウント情報を挿入中の USB メモリーへ書き出し、PC で確認できるようにします",
     "plapps.title": "OnionHEN Payload 自作ソフト - アプリケーション",
-    "plapps.version_fmt": "%s | バージョン: %s"
+    "plapps.version_fmt": "%s | バージョン: %s",
+    "ftp.toggle": "FTP server",
+    "ftp.toggle.sub": "Transfer files over the local network",
+    "ftp.off": "Off"
   },
   "notifications": {
     "notify.boot.starting": "OnionHEN を起動しています...",
@@ -311,6 +314,9 @@
     "notify.rp.reg_set": "SCE_REGMGR：REMOTEPLAY_rp_enable を設定できません（0x%x）",
     "notify.rp.reg_verify": "SCE_REGMGR：REMOTEPLAY_rp_enable を検証できません（0x%x）",
     "notify.rp.confirm": "sceRemoteplayConfirmDeviceRegist 0x%X ペアリング状態：%d ペアリングエラー：%d",
-    "notify.brand": "OnionHEN"
+    "notify.brand": "OnionHEN",
+    "notify.ftp.started": "FTP server started on %s:2121",
+    "notify.ftp.stopped": "FTP server stopped",
+    "notify.ftp.start_failed": "Failed to start FTP server"
   }
 }

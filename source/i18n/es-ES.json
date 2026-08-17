@@ -190,7 +190,10 @@
     "rp.save_usb": "Guardar los datos de Remote Play en USB",
     "rp.save_usb.sub": "Escribir el PIN y los datos de cuenta actuales en una unidad USB insertada para verlos en un PC",
     "plapps.title": "Homebrew de payload OnionHEN - Aplicaciones",
-    "plapps.version_fmt": "%s | versión: %s"
+    "plapps.version_fmt": "%s | versión: %s",
+    "ftp.toggle": "FTP server",
+    "ftp.toggle.sub": "Transfer files over the local network",
+    "ftp.off": "Off"
   },
   "notifications": {
     "notify.boot.starting": "OnionHEN se está iniciando...",
@@ -311,6 +314,9 @@
     "notify.rp.reg_set": "SCE_REGMGR: no se pudo establecer REMOTEPLAY_rp_enable (0x%x)",
     "notify.rp.reg_verify": "SCE_REGMGR: no se pudo verificar REMOTEPLAY_rp_enable (0x%x)",
     "notify.rp.confirm": "sceRemoteplayConfirmDeviceRegist 0x%X estado de emparejamiento: %d error de emparejamiento: %d",
-    "notify.brand": "OnionHEN"
+    "notify.brand": "OnionHEN",
+    "notify.ftp.started": "FTP server started on %s:2121",
+    "notify.ftp.stopped": "FTP server stopped",
+    "notify.ftp.start_failed": "Failed to start FTP server"
   }
 }

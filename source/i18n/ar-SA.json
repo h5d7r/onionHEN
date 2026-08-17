@@ -190,7 +190,10 @@
     "rp.save_usb": "حفظ تفاصيل اللعب عن بُعد إلى USB",
     "rp.save_usb.sub": "اكتب رمز PIN ومعلومات الحساب الحالية إلى قرص USB مدرج للعرض على حاسوب",
     "plapps.title": "برامج OnionHEN المنزلية - التطبيقات",
-    "plapps.version_fmt": "%s | الإصدار: %s"
+    "plapps.version_fmt": "%s | الإصدار: %s",
+    "ftp.toggle": "FTP server",
+    "ftp.toggle.sub": "Transfer files over the local network",
+    "ftp.off": "Off"
   },
   "notifications": {
     "notify.boot.starting": "جاري تشغيل OnionHEN...",
@@ -311,6 +314,9 @@
     "notify.rp.reg_set": "SCE_REGMGR: تعذّر تعيين REMOTEPLAY_rp_enable (0x%x)",
     "notify.rp.reg_verify": "SCE_REGMGR: تعذّر التحقق من REMOTEPLAY_rp_enable (0x%x)",
     "notify.rp.confirm": "sceRemoteplayConfirmDeviceRegist 0x%X pair_stat: %d pair_err: %d",
-    "notify.brand": "OnionHEN"
+    "notify.brand": "OnionHEN",
+    "notify.ftp.started": "FTP server started on %s:2121",
+    "notify.ftp.stopped": "FTP server stopped",
+    "notify.ftp.start_failed": "Failed to start FTP server"
   }
 }
