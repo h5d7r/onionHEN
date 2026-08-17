@@ -4,6 +4,7 @@
  */
 #include <onion/platform.h>
 #include "ipc.hpp"
+#include "ftp_server.hpp"
 #include <msg.hpp>
 #include <onion/settings.hpp>
 #include "common_utils.h"
@@ -250,6 +251,10 @@ void handleIPC(clientArgs *client, std::string &inputStr,
     LOG_WARN("LEGACY_CMD_SERVER: unsupported (TCP 9028 removed)");
     reply(sender_app, true);
     break;
+  case BREW_UTIL_GET_FTP_STATUS: {
+    reply(sender_app, false, ftp_server_status_json());
+    break;
+  }
   case BREW_KILL_DAEMON:{
     /* Reply before exiting — the previous order put exit(1337) first, so the
      * kill() and reply() below it were unreachable and the caller never got a
