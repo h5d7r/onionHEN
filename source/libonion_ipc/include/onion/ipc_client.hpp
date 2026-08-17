@@ -83,6 +83,8 @@ public:
   void Reload_Daemon_Settings();
   bool Launch_Elfldr();
   bool Set_Fan_Threshold(int temp, bool enabled);
+  /** Util: query anonymous FTP server status (BREW_UTIL_GET_FTP_STATUS). */
+  bool GetFtpStatus(std::string &out_json);
   /** Crit: inject ShellUI toolbox (BREW_ENABLE_TOOLBOX). */
   bool EnableToolbox();
 
