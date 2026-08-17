@@ -5,12 +5,10 @@ on:
     branches: [main, master]
     paths-ignore:
       - '**/*.md'
-      - '**/*.txt'
   pull_request:
     branches: [main, master]
     paths-ignore:
       - '**/*.md'
-      - '**/*.txt'
   workflow_dispatch:
 
 jobs:
