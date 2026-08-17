@@ -16,6 +16,7 @@ along with this program; see the file COPYING. If not, see
 
 #include "ipc.hpp"
 #include "cheats/cheat_service.hpp"
+#include "ftp_server.hpp"
 #include <onion/settings.hpp>
 #include <onion/log_settings.hpp>
 #include <onion/platform.h>
@@ -97,6 +98,8 @@ bool LoadSettings() {
     if (s.ui_lang == onion::kUiLanguageSystem)
         (void)sceSystemServiceParamGetInt(1, &system_language);
     onion_notify_apply_ui_language(s.ui_lang, system_language);
+    /* Apply network settings such as the built-in FTP server. */
+    ftp_server_apply_settings();
     /* Missing file is not an error — defaults were applied. */
     return true;
 }
