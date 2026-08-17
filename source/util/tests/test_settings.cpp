@@ -125,6 +125,7 @@ static int test_full_schema_roundtrip(void) {
   in.toolbox_shortcut_opt = 2;
   in.ui_lang = onion::kUiLanguageZhHans;
   in.kstuff_autoload = false;
+  in.ftp_server_enabled = true;
   in.app_jailbreak_allowlist.exact_title_ids = {};
   in.app_jailbreak_allowlist.exact_title_ids[0] = "ITEM00001";
   in.app_jailbreak_allowlist.exact_title_ids[1] = "CUSA12345";
@@ -158,6 +159,7 @@ static int test_full_schema_roundtrip(void) {
   TEST_ASSERT_EQ_INT(in.toolbox_shortcut_opt, out.toolbox_shortcut_opt);
   TEST_ASSERT_EQ_INT(in.ui_lang, out.ui_lang);
   TEST_ASSERT_TRUE(out.kstuff_autoload == in.kstuff_autoload);
+  TEST_ASSERT_TRUE(out.ftp_server_enabled == in.ftp_server_enabled);
   TEST_ASSERT_EQ_U64(
       in.app_jailbreak_allowlist.exact_title_id_count,
       out.app_jailbreak_allowlist.exact_title_id_count);
