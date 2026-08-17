@@ -461,6 +461,19 @@ bool IPC_Client::Set_Fan_Threshold(int temp, bool enabled) {
   return true;
 }
 
+bool IPC_Client::GetFtpStatus(std::string &out_json) {
+  if (!require_util("GetFtpStatus")) {
+    return false;
+  }
+  std::string ipc_msg;
+  if (!IPCSendCommand(BREW_UTIL_GET_FTP_STATUS, ipc_msg)) {
+    LOG_ERROR("Failed to get FTP status");
+    return false;
+  }
+  out_json = ipc_msg;
+  return true;
+}
+
 
 bool IPC_Client::EnableToolbox() {
   if (!require_crit("EnableToolbox")) {
