@@ -31,7 +31,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             bash clang-18 lld-18 wget cmake ninja-build \
-            python3 python3-pyelftools xz-utils curl unzip file
+            python3 python3-pyelftools xz-utils curl unzip file \
+            librsvg2-bin
 
       - name: Download PS5 Payload SDK
         run: |
