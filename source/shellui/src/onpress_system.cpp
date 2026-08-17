@@ -4,6 +4,17 @@
 #include <onion/notify_i18n.h>
 #include <cstdlib>
 
+static OnPressResult id_ftp_server(OnPressContext &ctx) {
+  const bool enabled = value_as_int(ctx);
+  if (enabled == g_settings.ftp_server_enabled) {
+    LOG_WARN("FTP server already %s", enabled ? "Enabled" : "Disabled");
+    return OnPressResult::EarlyReturn;
+  }
+  g_settings.ftp_server_enabled = enabled;
+  ctx.reload_util = true;
+  return OnPressResult::Handled;
+}
+
 static OnPressResult id_start_opt(OnPressContext &ctx) {
   char *end = nullptr;
   const long selected = std::strtol(ctx.value.c_str(), &end, 10);
@@ -179,6 +190,7 @@ static OnPressResult id_toolbox_shortcut(OnPressContext &ctx) {
 }
 
 static const OnPressExactEntry kExact[] = {
+    {"id_ftp_server", id_ftp_server},
     {"id_start_opt", id_start_opt},
     {"id_log_level", id_log_level},
     {"id_app_jailbreak_enabled", id_app_jailbreak_enabled},
