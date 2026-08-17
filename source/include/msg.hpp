@@ -62,6 +62,7 @@ enum DaemonCommands : unsigned int {
   BREW_UTIL_UNUSED_LEGACY_CMD_SERVER, // was TOGGLE_LEGACY_CMD_SERVER (TCP 9028 removed)
   BREW_UTIL_UNUSED_2,
   BREW_UTIL_UNUSED_3,
+  BREW_UTIL_GET_FTP_STATUS,
 
   // Legacy: manual elfldr launch removed (embedded 9020 is bootstrapper-managed)
   BREW_UTIL_LAUNCH_ELFLDR = 0xE1F1D8u,
