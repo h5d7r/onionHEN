@@ -582,7 +582,26 @@ void append_toolbox_connection_group(ps5ui::Group& g) {
 #endif
 
 void append_toolbox_system_group(ps5ui::Group& g) {
-  g.group(
+  std::string ftp_subtitle = toolbox_i18n::tr("ftp.off");
+  if (toolbox_on("id_ftp_server")) {
+    std::string ftp_json;
+    if (IPC_Client::getInstance(true).GetFtpStatus(ftp_json)) {
+      onion_cjson::Root ftp_root(ftp_json);
+      if (ftp_root) {
+        const bool ftp_enabled =
+            onion_cjson::bool_item(ftp_root.get(), "enabled", false);
+        const char *ftp_ip =
+            onion_cjson::string_item(ftp_root.get(), "ip", "");
+        if (ftp_enabled && ftp_ip[0] != '\0')
+          ftp_subtitle = std::string(ftp_ip) + ":2121";
+      }
+    }
+  }
+
+  g.toggle("id_ftp_server", toolbox_i18n::tr("ftp.toggle"),
+           toolbox_on("id_ftp_server"), ftp_subtitle,
+           toolbox_i18n::tr("ftp.toggle.sub"), kIconHardDrive)
+      .group(
        "id_group_fan", toolbox_i18n::tr("fan.group"),
        [](ps5ui::Group& f) {
          f.toggle("id_enable_fan_speed", toolbox_i18n::tr("fan.enable"),
