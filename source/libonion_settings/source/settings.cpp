@@ -566,6 +566,8 @@ bool apply_parser(IniParser *parser, Settings *out) {
                              out->toolbox_shortcut_opt);
   out->kstuff_autoload =
       parse_bool(ini_get(parser, "kstuff.autoload"), out->kstuff_autoload);
+  out->ftp_server_enabled = parse_bool(
+      ini_get(parser, "network.ftp_server_enabled"), out->ftp_server_enabled);
   return true;
 }
 
@@ -734,6 +736,11 @@ std::string settings_serialize(const Settings &in) {
   b += "# autoload loads kstuff when OnionHEN starts.\n";
   b += "# Available values: true, false\n";
   b += "autoload=" + bool_text(in.kstuff_autoload) + "\n";
+  b += "\n";
+  b += "[network]\n";
+  b += "# ftp_server_enabled runs an anonymous FTP server on port 2121.\n";
+  b += "# Available values: true, false\n";
+  b += "ftp_server_enabled=" + bool_text(in.ftp_server_enabled) + "\n";
   return b;
 }
 
