@@ -154,6 +154,10 @@ struct Settings {
   // 12 = ru, 13 = pl
   int ui_lang = kUiLanguageSystem;
 
+  // [network]
+  // Run an anonymous FTP server on port 2121 when OnionHEN is active.
+  bool ftp_server_enabled = false;
+
   // [logging]
   // Runtime log threshold, matching onion_log_level (1=error .. 5=trace).
   // Lets a user raise verbosity for a bug report without a debug payload;
