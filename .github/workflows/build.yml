@@ -8,8 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Clone repository
+        run: |
+          git clone --depth 1 "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git" .
+          git fetch --depth 1 origin "$GITHUB_REF"
+          git checkout FETCH_HEAD
 
       - name: Install dependencies
         run: |
