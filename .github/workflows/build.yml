@@ -28,7 +28,7 @@ jobs:
           PS5_PAYLOAD_SDK: /home/runner/ps5-sdk/ps5-payload-sdk
           LLVM_CONFIG: /home/runner/ps5-sdk/ps5-payload-sdk/bin/prospero-llvm-config
         run: |
-          ./scripts/build.sh --release --init-submodules
+          ./scripts/build.sh --release
 
       - name: Upload OnionHEN.elf
         uses: actions/upload-artifact@v4
