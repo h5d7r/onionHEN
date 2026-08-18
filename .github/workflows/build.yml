@@ -1,0 +1,39 @@
+name: Build OnionHEN
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build python3 xz-utils librsvg2-bin curl unzip
+
+      - name: Download PS5 Payload SDK
+        run: |
+          curl -fsSL --retry 3 -o /tmp/ps5-payload-sdk.zip \
+            "https://github.com/ps5-payload-dev/sdk/releases/latest/download/ps5-payload-sdk.zip"
+          mkdir -p "$HOME/ps5-sdk"
+          unzip -q -o /tmp/ps5-payload-sdk.zip -d "$HOME/ps5-sdk"
+
+      - name: Build
+        env:
+          PS5_PAYLOAD_SDK: /home/runner/ps5-sdk/ps5-payload-sdk
+          LLVM_CONFIG: /home/runner/ps5-sdk/ps5-payload-sdk/bin/prospero-llvm-config
+        run: |
+          ./scripts/build.sh --release --init-submodules
+
+      - name: Upload OnionHEN.elf
+        uses: actions/upload-artifact@v4
+        with:
+          name: OnionHEN
+          path: build/bin/OnionHEN.elf
